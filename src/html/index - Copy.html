@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="description" content="3 bedroom townhouse in the center of Aberlour, Scotland.">
+    <link rel="icon" type="image/png" href="images/myLogo.png">
+    <title>Noisify</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mine.css">
+    <script src="js/mine.js"></script>
+    <!--  jquery.js  --> <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!--  popper.js  --> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--  bootstrap.js  --> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--  fonts.googleapis  --> <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!--  jquery.js  --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  scrollToTop js  --> <script type="text/javascript">      $(document).ready(function(){        $(window).scroll(function(){          if($(this).scrollTop() > 100){            $('#scroll').fadeIn();          }else{            $('#scroll').fadeOut();          }        });      $('#scroll').click(function(){        $("html, body").animate({ scrollTop: 0 }, 600);          return false;        });      });    </script>  <!-- back to top script-->
+    <!--  howler.js  --> <script src="js/howler.js/dist/howler.js"></script>
+
+  </head>
+  <body>
+    <!--   header  -->
+        <body class="auto">
+          <script>document.body.className += ' fade-out';</script>
+
+        <div style="min-height: 100%; min-width: 400px;">
+
+            <div id="navbar">
+              <img id="logo" class="float-left justify-content-center" src="images/myLogo.png" height="50px" alt="logo">
+              <h4 id="navbar-title" class="float-left justify-content-center">NOISIFY</h4>
+              <div id="navbar-links" class="float-right float-left nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="#">My Profile</a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browse</a>
+                <div id="browse-dropdown"class="dropdown-menu dropdown-menu-right">
+                  <a  class="nav-link" href="#">Sounds</a>
+                  <a  class="nav-link" href="#">Users</a>
+                </div>
+              </div>
+              <div id="navtoggle" class="float-right">
+                <img id="menu-icon" onclick="javascript:navToggle()" class="" src="images/menu-icon.png"  alt="menu-icon">
+              </div>
+            </div>
+            <ul id="nav-dropdown">
+              <a  class="nav-link active" href="#">Home</a>
+              <a  class="nav-link" href="#">My Profile</a>
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browse</a>
+              <div id="browse-dropdown2"class="dropdown-menu dropdown-menu-right">
+                <a  class="nav-link" href="#">Sounds</a>
+                <a  class="nav-link" href="#">Users</a>
+              </div>
+            </ul>
+    <!--   header  -->
+
+
+      <div id="main">
+          <div id="controls">
+
+            <div id="slider">
+              <input type="range" min="0" max="100" value="9" class="slider s1 float-left justify-content-center" id="slider1">
+              <span class="float-left justify-content-center" id="val1"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="8" class="slider s2 float-left justify-content-center" id="slider2">
+              <span class="float-left justify-content-center" id="val2"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="6" class="slider s3 float-left justify-content-center" id="slider3">
+              <span class="float-left justify-content-center" id="val3"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="5" class="slider s4 float-left justify-content-center" id="slider4">
+              <span class="float-left justify-content-center" id="val4"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="6" class="slider s5 float-left justify-content-center" id="slider5">
+              <span class="float-left justify-content-center" id="val5"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="8" class="slider s6 float-left justify-content-center" id="slider6">
+              <span class="float-left justify-content-center" id="val6"></span>
+            </div>
+            <div id="slider">
+              <input type="range" min="0" max="100" value="9" class="slider s7 float-left justify-content-center" id="slider7">
+              <span class="float-left justify-content-center" id="val7"></span>
+            </div>
+
+
+            <script>    //  slider controls script
+              var slider1 = document.getElementById("slider1");  var volume1 = document.getElementById("val1");  volume1.innerHTML = slider1.value;  slider1.oninput = function() {  volume1.innerHTML = this.value;  }; slider1.onchange = function() { updateVolume1(this.value/100); }
+              var slider2 = document.getElementById("slider2");  var volume2 = document.getElementById("val2");  volume2.innerHTML = slider2.value;  slider2.oninput = function() {  volume2.innerHTML = this.value;  }; slider2.onchange = function() { updateVolume2(this.value/100); }
+              var slider3 = document.getElementById("slider3");  var volume3 = document.getElementById("val3");  volume3.innerHTML = slider3.value;  slider3.oninput = function() {  volume3.innerHTML = this.value;  }; slider3.onchange = function() { updateVolume3(this.value/100); }
+              var slider4 = document.getElementById("slider4");  var volume4 = document.getElementById("val4");  volume4.innerHTML = slider4.value;  slider4.oninput = function() {  volume4.innerHTML = this.value;  }; slider4.onchange = function() { updateVolume4(this.value/100); }
+              var slider5 = document.getElementById("slider5");  var volume5 = document.getElementById("val5");  volume5.innerHTML = slider5.value;  slider5.oninput = function() {  volume5.innerHTML = this.value;  }; slider5.onchange = function() { updateVolume5(this.value/100); }
+              var slider6 = document.getElementById("slider6");  var volume6 = document.getElementById("val6");  volume6.innerHTML = slider6.value;  slider6.oninput = function() {  volume6.innerHTML = this.value;  }; slider6.onchange = function() { updateVolume6(this.value/100); }
+              var slider7 = document.getElementById("slider7");  var volume7 = document.getElementById("val7");  volume7.innerHTML = slider7.value;  slider7.oninput = function() {  volume7.innerHTML = this.value;  }; slider7.onchange = function() { updateVolume7(this.value/100); }
+              var volume1Before = 0.09;
+              var volume2Before = 0.08;
+              var volume3Before = 0.06;
+              var volume4Before = 0.05;
+              var volume5Before = 0.06;
+              var volume6Before = 0.08;
+              var volume7Before = 0.09;
+              var subBass1 = new Howl({  src: ['audio/1sub-bass.mp3'],  loop: true,  volume: 0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {subBass1.once('unlock', function() {subBass1.play();});}  });
+              var bass2 = new Howl({  src: ['audio/2bass.mp3'],  loop: true,  volume: 0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {bass2.once('unlock', function() {bass2.play();});}  });
+              var highBass3 = new Howl({  src: ['audio/3high-base.mp3'],  loop: true,  volume: .0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {highBass3.once('unlock', function() {highBass3.play();});}  });
+              var lowMids4 = new Howl({  src: ['audio/4low-mids.mp3'],  loop: true,  volume: .0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {lowMids4.once('unlock', function() {lowMids4.play();});}  });
+              var mids5 = new Howl({  src: ['audio/5mids.mp3'],  loop: true,  volume: .0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {mids5.once('unlock', function() {mids5.play();});}  });
+              var lowTrebble6 = new Howl({  src: ['audio/6low-trebble.mp3'],  loop: true,  volume: .0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {lowTrebble6.once('unlock', function() {lowTrebble6.play();});}  });
+              var trebble7 = new Howl({  src: ['audio/7trebble.mp3'],  loop: true,  volume: .0,  html5: true, preload: true, autoplay: true,  onplayerror: function() {trebble7.once('unlock', function() {trebble7.play();});}  });
+              subBass1.fade(0, 0.09, 1000);
+              bass2.fade(0, 0.08, 1000);
+              highBass3.fade(0, 0.06, 1000);
+              lowMids4.fade(0, 0.05, 1000);
+              mids5.fade(0, 0.06, 1000);
+              lowTrebble6.fade(0, 0.08, 1000);
+              trebble7.fade(0, 0.09, 1000);
+              updateVolume1=function(volume1) {volume1=volume1;  subBass1.fade(volume1Before, volume1, 1000);  console.log('1volume:', subBass1.volume(),volume1, volume1Before);  volume1Before = volume1;  }
+              updateVolume2=function(volume2) {volume2=volume2;  bass2.fade(volume2Before, volume2, 1000);  console.log('2volume:', bass2.volume(),volume2, volume2Before);  volume2Before = volume2;  }
+              updateVolume3=function(volume3) {volume3=volume3;  highBass3.fade(volume3Before, volume3, 1000);  console.log('3volume:', highBass3.volume(),volume3, volume3Before);  volume3Before = volume3;  }
+              updateVolume4=function(volume4) {volume4=volume4;  lowMids4.fade(volume4Before, volume4, 1000);  console.log('4volume:', lowMids4.volume(),volume4, volume4Before);  volume4Before = volume4;  }
+              updateVolume5=function(volume5) {volume5=volume5;  mids5.fade(volume5Before, volume5, 1000);  console.log('5volume:', mids5.volume(),volume5, volume5Before);  volume5Before = volume5;  }
+              updateVolume6=function(volume6) {volume6=volume6;  lowTrebble6.fade(volume6Before, volume6, 1000);  console.log('6volume:', lowTrebble6.volume(),volume6, volume6Before);  volume6Before = volume6;  }
+              updateVolume7=function(volume7) {volume7=volume7;  trebble7.fade(volume7Before, volume7, 1000);  console.log('7volume:', trebble7.volume(),volume7, volume7Before);  volume7Before = volume7;  }
+
+
+              function muteFunction() {
+                updateVolume1(0); updateVolume2(0);  updateVolume3(0);  updateVolume4(0);  updateVolume5(0);  updateVolume6(0);  updateVolume7(0);
+                slider1.value=0; slider2.value=0; slider3.value=0; slider4.value=0; slider5.value=0; slider6.value=0; slider7.value=0;
+                volume1.innerHTML = slider1.value;  volume2.innerHTML = slider2.value;  volume3.innerHTML = slider3.value;  volume4.innerHTML = slider4.value;  volume5.innerHTML = slider5.value;  volume6.innerHTML = slider6.value;  volume7.innerHTML = slider7.value;
+              }
+              function resetFunction() {
+                updateVolume1(0.09); updateVolume2(0.08);  updateVolume3(0.06);  updateVolume4(0.05);  updateVolume5(0.06);  updateVolume6(0.08);  updateVolume7(0.09);
+                slider1.value=9; slider2.value=8; slider3.value=6; slider4.value=5; slider5.value=6; slider6.value=8; slider7.value=9;
+                volume1.innerHTML = slider1.value;  volume2.innerHTML = slider2.value;  volume3.innerHTML = slider3.value;  volume4.innerHTML = slider4.value;  volume5.innerHTML = slider5.value;  volume6.innerHTML = slider6.value;  volume7.innerHTML = slider7.value;
+              }
+              function randomFunction() {
+                var rand1=(Math.floor(Math.random() * 121) -20)/100;  rand1 = rand1 < 0 ? 0 : rand1; console.log(rand1);
+                var rand2=(Math.floor(Math.random() * 121) -20)/100;  rand2 = rand2 < 0 ? 0 : rand2; console.log(rand2);
+                var rand3=(Math.floor(Math.random() * 121) -20)/100;  rand3 = rand3 < 0 ? 0 : rand3; console.log(rand3);
+                var rand4=(Math.floor(Math.random() * 121) -20)/100;  rand4 = rand4 < 0 ? 0 : rand4; console.log(rand4);
+                var rand5=(Math.floor(Math.random() * 121) -20)/100;  rand5 = rand5 < 0 ? 0 : rand5; console.log(rand5);
+                var rand6=(Math.floor(Math.random() * 121) -20)/100;  rand6 = rand6 < 0 ? 0 : rand6; console.log(rand6);
+                var rand7=(Math.floor(Math.random() * 121) -20)/100;  rand7 = rand7 < 0 ? 0 : rand7; console.log(rand7);
+                updateVolume1(rand1); updateVolume2(rand2);  updateVolume3(rand3);  updateVolume4(rand4);  updateVolume5(rand5);  updateVolume6(rand6);  updateVolume7(rand7);
+                slider1.value=rand1*100; slider2.value=rand2*100; slider3.value=rand3*100; slider4.value=rand4*100; slider5.value=rand5*100; slider6.value=rand6*100; slider7.value=rand7*100;
+                volume1.innerHTML = slider1.value;  volume2.innerHTML = slider2.value;  volume3.innerHTML = slider3.value;  volume4.innerHTML = slider4.value;  volume5.innerHTML = slider5.value;  volume6.innerHTML = slider6.value;  volume7.innerHTML = slider7.value;
+              }
+
+              function saveFunction() { /*  */ }
+
+
+
+
+
+
+
+
+            </script>
+
+            <div id="sounds">
+
+            </div>
+            <div id="buttons" class="justify-content-center">
+              <button id="mute" type="button" name="mute" onclick="muteFunction()"><img id="sliderButton" height="25px" src="images/mute.png" alt="mute"></button>
+              <button id="reset" type="button" name="reset" onclick="resetFunction()"><img id="sliderButton" height="25px" src="images/reset.png" alt="reset"></button>
+              <button id="random" type="button" name="random" onclick="randomFunction()"><img id="sliderButton" height="25px" src="images/random.png" alt="random"></button>
+              <button id="save" type="button" name="save"><img id="sliderButton" height="25px" src="images/save.png" alt="save"></button>
+
+
+              <!-- Save Dialog -->
+              <div id="save-dialog" class="save-dialog">
+                <div class="save-dialog-content">
+                  <div class="save-dialog-header">
+                    <span class="close">&times;</span>
+                    <h2>Save this sound</h2>
+                  </div>
+                  <div class="save-dialog-body">
+
+                    <form>
+                      <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" class="form-control" id="name" aria-describedby="textHelp" placeholder="Enter name" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+              <script>    //    save button script
+              var saveDialog = document.getElementById("save-dialog");
+              var saveButton = document.getElementById("save");
+              var closeButton = document.getElementsByClassName("close")[0];
+              saveButton.onclick = function() {  saveDialog.style.display = "block"; saveDialog.style.backgroundColor = "rgba(0,0,0,0.4)";}
+              closeButton.onclick = function() {  saveDialog.style.display = "none"; saveDialog.style.backgroundColor = "rgba(0,0,0,0)";}
+              window.onclick = function(event) {  if (event.target == saveDialog) {    saveDialog.style.display = "none";  }}
+              </script>
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+          <div id="mySounds">
+
+          </div>
+
+
+
+            <table id="sounds-table" class="table table-borderless table-dark">
+              <thead>
+                <tr>
+                  <th id="table-header">
+                    My Sounds
+                    <button id="delete-selected" class="float-right" type="button" name="deleteSelected" onclick="deleteSelected()"><img height="23px" src="images/delete.png" alt="delete"></button>
+                    <button id="copy-selected"  class="float-right" type="button" name="copySelected" onclick="copySelected()"><img height="23px" src="images/copy.png" alt="copy"></button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select id="table-options" name="table-options" multiple>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                      <option id="option">test test 123</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+<!-- BackToTop Button -->
+<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+
+</div>
+
+
+
+  </body>
+</html>
